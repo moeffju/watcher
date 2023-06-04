@@ -66,4 +66,8 @@ if __name__ == "__main__":
         logging.error("Please pass a source and destination directory")
         sys.exit(1)
     interval = int(sys.argv[3]) if len(sys.argv) > 3 else 10
-    watch_folder(sys.argv[1], sys.argv[2], interval)
+    try:
+        watch_folder(sys.argv[1], sys.argv[2], interval)
+    except KeyboardInterrupt:
+        logging.info("Interrupted, exiting...")
+        sys.exit(0)
