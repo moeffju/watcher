@@ -72,6 +72,8 @@ if __name__ == "__main__":
     observer = Observer()
     observer.schedule(event_handler, src_folder, recursive=True)
 
+    logging.info(f"Syncing {src_folder} to {dest_folder}")
+
     # Start the observer
     observer.start()
     try:
